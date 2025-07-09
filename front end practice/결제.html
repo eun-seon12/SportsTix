@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>결제창</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, select, button {
+      display: block;
+      margin-top: 10px;
+      padding: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>결제 정보 입력</h2>
+  <form onsubmit="submitPayment(event)">
+    <label>이름</label>
+    <input type="text" placeholder="이름 입력" required>
+
+    <label>카드 번호</label>
+    <input type="text" placeholder="1234-5678-9012-3456" required>
+
+    <label>유효 기간</label>
+    <input type="text" placeholder="MM/YY" required>
+
+    <label>CVV</label>
+    <input type="text" placeholder="세 자리 숫자" required>
+
+    <button type="submit">결제하기</button>
+  </form>
+
+  <script>
+    function submitPayment(e) {
+      e.preventDefault(); // 새로고침 막기
+      alert("결제가 완료되었습니다!");
+      if (window.opener && !window.opener.closed) {
+        window.opener.location.href = "메인.html" 
+        //메인페이지로 이동하도록 수정 후 뒤로가기 안되게
+      }
+
+      window.close();
+    }
+  </script>
+</body>
+</html>
+
+<!-- document.getElementById("btn1").addEventListener("click",function(){
+            window.location.href ="디테일.html";
+        }) -->

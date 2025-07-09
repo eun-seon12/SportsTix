@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.SportsTix.j</title>
+    <style>
+    * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #A3DCFF;
+            padding: 0;
+            margin: 0;
+        }
+        .st {
+            width: 100vh;
+            height: 100vh;
+            margin: 0 auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            /* align-items: center; */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 200px;
+            padding: 0;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        #sp {
+            font-size: 3.5rem;
+            font-weight: bold;
+            
+        }
+        #join {
+            width: 40%;
+            height: 100%;
+            background: white;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .join-info {
+            list-style-type: none;
+        }
+        </style>
+</head>
+<body>
+    <div class="st">
+        <header>
+            <p id="sp">SportsTix</p>
+        </header>
+        <section>
+            <div id="join">
+                <h2>회원가입</h2>
+                <ul class="join-info">
+                    <li>아이디</li><input type="text" id="id">
+                    <li>비밀번호</li><input type="text" id="password">
+                    <li>이름</li><input type="text" id="name">
+                    <li>전화번호</li><input type="number" id="phone">
+                    <li>이메일</li><input type="email" id="email">
+                    <br>
+                    <button id="joinok">가입</button>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script>
+        document.getElementById("joinok").addEventListener("click",function(){
+            window.location.href ="로그인.html";
+        })
+</script>
+</body>
+</html>

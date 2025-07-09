@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.SportsTix.d</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #A3DCFF;
+            padding: 0;
+            margin: 0;
+        }
+        .st {
+            width: 100vh;
+            height: 100vh;
+            margin: 0 auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            /* align-items: center; */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 200px;
+            padding: 0;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        #sp {
+            font-size: 3.5rem;
+            font-weight: bold;
+            
+        }
+        #nav {
+            display: flex;
+            list-style-type: none;
+            margin-top: 0;
+            padding-top:0;
+            
+        }
+        #nav2 {
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: black;
+        }
+        .content {
+            height: 75%;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .left {
+            width: 50%;
+        }
+        a {
+            text-decoration: none;
+            color :black;
+            /* margin-bottom: 10%; */
+        }
+        img {
+            width: 95%;
+            height: 80%;
+            display: flex;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        .price p {
+            margin: 5px 0;
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 8px;
+        }
+        .vip {
+            background-color: red ;
+        }
+        .normal {
+            background-color: yellow;
+        }
+        .right {
+            width: 45%;
+        }
+        .right h1 {
+            margin: 15% 0 15% 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .detial-info {
+            margin: 0 0 0 0 ;
+            font-size: 1.5rem;
+            line-height: 180%;
+        }
+        #btn2 {
+            margin-top: 50px;
+            width: 70%;
+            padding: 15px;
+            background-color: #5D5D5D ;
+            color: white;
+            border: none;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="st">
+        <header>
+            <p id="sp">SportsTix</p>
+            <ul id="nav">
+                <li><a href="#" id="nav2">마이페이지</a></li>
+                <li><a href="#" id="nav2">로그인</a></li>
+            </ul>
+        </header>
+        <section>
+            <div class="content">
+                <div class="left">
+                <a href="#" class="back">← 뒤로가기</a>
+                <div class="detail-img"></div>
+                    <img src="/front end practice/baseball.jpg" alt="야구">
+                </div>
+
+                <div class="right">
+                    <h1>Seoul vs Busan Baseball Game</h1>
+                    <div class="detial-info">
+                    <P>
+                        날짜 : 2025년 7월 14일<br>
+                        시간 : 오후 6시 30분<br>
+                        장소 : 잠실 경기장 
+                    </P>
+                    </div>
+                    <button id="btn2" onclick="checkLogin()">예매하기</button>
+                </div>
+            </div>
+            <div class="price">
+                    <h2>가격</h2>
+                    <p><span class="dot vip"></span> vip석 20,000원</p>
+                    <p><span class="dot normal"></span> 일반석 10,000원</p>
+                </div>
+                <div class="notice">
+                    <h2>주의사항</h2>
+                    <p>1</p>
+                    <p>2</p>
+                </div>
+        </section>
+    </div>
+    <footer>
+    </footer>
+</body>
+
+<script>
+        // document.getElementById('btn2').onclick =
+        // ()=> window.alert("로그인이 필요합니다");
+        function checkLogin() {
+            const answer = confirm("로그인이 필요합니다");
+
+
+            if(answer) {
+                window.location.href = "로그인.html";
+            } else {
+                console.log("로그인을 취소함");
+            }
+        }
+        
+</script>
+</html>
