@@ -34,6 +34,7 @@
             margin-bottom: 0;
         }
         #sp {
+            cursor: pointer;
             font-size: 3.5rem;
             font-weight: bold;
             
@@ -138,15 +139,15 @@
         <header>
             <p id="sp">SportsTix</p>
             <ul id="nav">
-                <li><a href="#" id="nav2">마이페이지</a></li>
-                <li><a href="#" id="nav2">로그인</a></li>
+                <li><a href="마이페이지.html" id="nav2">마이페이지</a></li>
+                <li><a href="로그인.html" id="nav2">로그인</a></li>
             </ul>
         </header>
 
         <section>
             <div class="booking">
                 <div class="left">
-                   <a href="#" class="back">← 뒤로가기</a>
+                   <a href="디테일.html" class="back">← 뒤로가기</a>
 
                 <h2>좌석 선택</h2>
 
@@ -287,6 +288,9 @@
     </footer>
 
 <script>
+    document.getElementById("sp").addEventListener("click", function() {
+            window.location.href = "메인.html";
+        });
   const selectedInfo = document.getElementById('selectedInfo');
   const totalPrice1 = document.getElementById('totalPrice');
   const seats = document.querySelectorAll('.seat');
