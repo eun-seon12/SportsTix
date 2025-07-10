@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1.SportsTix</title>
+    <title>SportsTix</title>
     <style>
         * {
             margin: 0;
@@ -54,6 +54,14 @@
             color: black;
         }
         #loi {
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: black;
+            cursor: pointer;
+        }
+        #logout {
             text-decoration: none;
             margin-left: 1.5rem;
             font-size: 1.2rem;
@@ -130,7 +138,7 @@
             /* flex-wrap: nowrap; */
         }
         .card {
-            background-color: white;
+            /* background-color: white; */
             width: 23%;
         }
         
@@ -140,12 +148,7 @@
             /* height: auto; */
             display: block;
         }
-        /* .image-box1 {
-            width: 4rem;
-            height: 5rem;
-            display: flex;
-            background-size: cover;
-        } */
+    
         .info {
             margin-top: 10px;
             text-align : center;
@@ -157,46 +160,51 @@
         }
         #info1 {
             font-size: medium;
-            color: red;
             line-height: 1.5;
+            color: black;
         }
         #btn1 {
             background: #5D5D5D;
             color: white;
             padding: 10px;
-            /* padding-left: 40px; */
+            border: none;
         }
-        /* .btn {
-            width:100px;
-            height:50px;
-            background: #5D5D5D;
-            color: white;
-
-        } */
-         /* vertical-align : top; */
-
+        .footer {
+            padding-bottom: 30px;
+            padding-top: 30px;
+        }
+        #fsp{
+            font-size: 2rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="st">
+        
+
         <header>
             <p id="sp">SportsTix</p>
             <ul id="nav">
-                <li><a href="마이페이지.html" id="mpg">마이페이지</a></li>
-                <li id="loi" onclick="openModal()">로그인</a></li>
+                <li><a href="#" id="mpg">마이페이지</a></li>
+                <li id="loi" onclick="openModal()">로그인</li>
+                <li id="logout" style="cursor: pointer; display: none;" onclick="logout()">로그아웃</li>
             </ul>
 
             <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3>로그인</h3>
-      <input type="text" placeholder="아이디 입력">
-      <input type="password" placeholder="비밀번호 입력">
-      <button id="lgbtn">로그인</button>
-    </div>
-  </div>
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h3>로그인</h3>
+                    <input type="text" placeholder="아이디 입력">
+                    <input type="password" placeholder="비밀번호 입력">
+                    <button id="lgbtn">로그인</button>
+                    <br>
+                    <button id="joinst">회원가입</button>
+                </div>
+            </div>
         </header>
     
+
         <section>
             <ul class="tabs">
                 <li><a href="#" id="tab">야구</a></li>
@@ -204,14 +212,8 @@
                 <li><a href="#" id="tab">축구</a></li>
                 <li><a href="#" id="tab">기타</a></li>
             </ul>
-            <!-- <div class="tabs">
-                <div class="tab">야구</div>
-                <div class="tab">농구</div>
-                <div class="tab">축구</div>
-                <div class="tab">기타</div>
-            </div> -->
+        
             <div class="card-container">
-            
             <div class="card">
                     <img src="/front end practice/baseball.jpg" alt="야구">
                 <div class="info">
@@ -232,72 +234,34 @@
             </div>
 
             <div class="card">
-                    <img src="/front end practice/basketball.jpg" alt="농구">
-                <div class="info">
-                    <h2>Seoul<br>
-                        vs<br> 
-                        Busan</h2>
-                        <br>
-                    <p id="info1">
-                    Baseketball Game<br>
-                    2025.07.14<br>
-                    6:00 PM<br>
-                    잠실 경기장
-                    </p>
-                    <br>
-                    
-                <button class="btn">예매</button>
-                </div>
+                    <img src="/front end practice/basketball.jpg" alt="농구">  
             </div>
-
             <div class="card">
                     <img src="/front end practice/soccer.jpg" alt="축구">
-                <div class="info">
-                    <h2>Seoul<br>
-                        vs<br> 
-                        Busan</h2>
-                        <br>
-                    <p id="info1">
-                    Soccer Game<br>
-                    2025.07.14<br>
-                    6:00 PM<br>
-                    잠실 경기장
-                    </p>
-                    <br>
-                    
-                <button class="btn">예매</button>
-                </div>
             </div>
-
             <div class="card">
                     <img src="/front end practice/ball.jpg" alt="기타">
-                <div class="info">
-                    <h2>Seoul vs Busan</h2>
-                    <p id="info4">
-                    Baseball Game<br>
-                    2025.07.14<br>
-                    6:00 PM<br>
-                    잠실 경기장
-                    </p>
-                    
-                <button class="btn">예매</button>
-                </div>
+                
             </div>
     </div>
         </section>
         <footer>
+            <div class="footer">
+                <p id="fsp">SportsTix</p>
+                <p>사용자이용약관</p>
+            </div>
         </footer>
     </div>
 
 <script>
-        document.getElementById("sp").addEventListener("click", function() {
+    document.getElementById("sp").addEventListener("click", function() {
             window.location.href = "메인.html";
         });
-        document.getElementById("btn1").addEventListener("click",function(){
+    document.getElementById("btn1").addEventListener("click",function(){
             window.location.href ="디테일.html";
         })
 
-        function openModal() {
+    function openModal() {
       document.getElementById("loginModal").style.display = "block";
     }
 
@@ -312,7 +276,86 @@
         closeModal();
       }
     }
-</script>
+    document.getElementById("joinst").addEventListener("click",function(){
+            window.location.href ="회원가입.html";
+        })
 
+    document.getElementById("lgbtn").addEventListener("click", function () {
+    // 로그인 성공 처리 (예: 아이디/비번 확인 생략)
+    localStorage.setItem("isLoggedIn", "true");
+
+    // 모달 닫기
+    document.getElementById("loginModal").style.display = "none";
+
+    // UI 갱신
+    updateLoginUI();
+    });
+
+    function updateLoginUI() {
+    const loginLi = document.getElementById("loi");
+    const logoutLi = document.getElementById("logout");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    if (isLoggedIn) {
+        loginLi.style.display = "none";
+        logoutLi.style.display = "inline"; // 로그아웃 버튼 보이게
+    } else {
+        loginLi.style.display = "inline";
+        logoutLi.style.display = "none";
+        loginLi.onclick = () => openModal(); // 로그인 모달 열기
+    }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    updateLoginUI(); // 로그인 상태에 따라 UI 설정
+
+    // 나머지 모달 닫기 처리
+    const closeBtn = document.querySelector(".close");
+    const modal = document.getElementById("loginModal");
+
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+        modal.style.display = "none";
+        }
+    });
+    });
+    function logout() {
+    localStorage.removeItem("isLoggedIn");
+    updateLoginUI();
+    }
+
+    document.getElementById("mpg").addEventListener("click", function(event){
+        event.preventDefault();
+
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        if(isLoggedIn) {
+            window.location.href = "마이페이지.html";
+        } else {
+            alert("로그인이 필요합니다.");
+            window.location.href = "메인.html";
+        }
+    });
+</script>
+<!-- 
+                <div class="info">
+                    <h2>Seoul<br>
+                        vs<br> 
+                        Busan</h2>
+                        <br>
+                    <p id="info1">
+                    Baseketball Game<br>
+                    2025.07.14<br>
+                    6:00 PM<br>
+                    잠실 경기장
+                    </p>
+                    <br>
+                    
+                <button class="btn">예매</button>
+                </div> 
+-->
 </body>
 </html>

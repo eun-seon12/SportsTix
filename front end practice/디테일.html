@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2.SportsTix.d</title>
+    <title>상세페이지</title>
     <style>
         * {
             margin: 0;
@@ -46,13 +46,75 @@
             padding-top:0;
             
         }
-        #nav2 {
+        #mpg {
             text-decoration: none;
             margin-left: 1.5rem;
             font-size: 1.2rem;
             font-weight: 700;
             color: black;
         }
+        #loi {
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: black;
+            cursor: pointer;
+        }
+        #logout {
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: black;
+            cursor: pointer;
+        }
+        .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* 모달 내용 */
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    input {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    #lgbtn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
         .content {
             height: 75%;
             display: flex;
@@ -115,13 +177,31 @@
 </head>
 <body>
     <div class="st">
+
+
         <header>
             <p id="sp">SportsTix</p>
             <ul id="nav">
-                <li><a href="마이페이지.html" id="nav2">마이페이지</a></li>
-                <li><a href="로그인.html" id="nav2">로그인</a></li>
+                <li id="mpg"><a href="#">마이페이지</a></li>
+                <li id="loi" onclick="openModal()">로그인</li>
+                <li id="logout" style="cursor: pointer; display: none;" onclick="logout()">로그아웃</li>
             </ul>
+
+            <div id="loginModal" class="modal">
+                <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>로그인</h3>
+                <input type="text" placeholder="아이디 입력">
+                <input type="password" placeholder="비밀번호 입력">
+                <button id="lgbtn">로그인</button>
+                <br>
+                <button id="joinst">회원가입</button>
+                </div>
+            </div>
         </header>
+
+
+
         <section>
             <div class="content">
                 <div class="left">
@@ -159,21 +239,116 @@
 </body>
 
 <script>
-        // document.getElementById('btn2').onclick =
-        // ()=> window.alert("로그인이 필요합니다");
         document.getElementById("sp").addEventListener("click", function() {
             window.location.href = "메인.html";
         });
         function checkLogin() {
-            const answer = confirm("로그인이 필요합니다");
+            const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-
-            if(answer) {
-                window.location.href = "로그인.html";
+            if (isLoggedIn) {
+                window.location.href = "예매.html";
             } else {
-                console.log("로그인을 취소함");
+                const answer = confirm("로그인이 필요합니다");
+                if(answer) {
+                    openModal();
+                }else {
+                    console.log("로그인 취소")
+                }
             }
+
         }
-        
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const closeBtn = document.querySelector(".close");
+            const modal = document.getElementById("loginModal");
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+        });
+        function openModal() {
+      document.getElementById("loginModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("loginModal").style.display = "none";
+    }
+
+    // 배경 클릭 시 모달 닫기
+    window.onclick = function(event) {
+      const modal = document.getElementById("loginModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+    document.getElementById("joinst").addEventListener("click",function(){
+            window.location.href ="회원가입.html";
+        })
+
+      document.getElementById("lgbtn").addEventListener("click", function () {
+    // 로그인 성공 처리 (예: 아이디/비번 확인 생략)
+    localStorage.setItem("isLoggedIn", "true");
+
+    // 모달 닫기
+    document.getElementById("loginModal").style.display = "none";
+
+    // UI 갱신
+    updateLoginUI();
+    });
+
+    function updateLoginUI() {
+    const loginLi = document.getElementById("loi");
+    const logoutLi = document.getElementById("logout");
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    if (isLoggedIn) {
+        loginLi.style.display = "none";
+        logoutLi.style.display = "inline"; // 로그아웃 버튼 보이게
+    } else {
+        loginLi.style.display = "inline";
+        logoutLi.style.display = "none";
+        loginLi.onclick = () => openModal(); // 로그인 모달 열기
+    }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    updateLoginUI(); // 로그인 상태에 따라 UI 설정
+
+    // 나머지 모달 닫기 처리
+    const closeBtn = document.querySelector(".close");
+    const modal = document.getElementById("loginModal");
+
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+        modal.style.display = "none";
+        }
+    });
+    });
+    function logout() {
+    localStorage.removeItem("isLoggedIn");
+    updateLoginUI();
+    }
+
+    document.getElementById("mpg").addEventListener("click", function(event){
+        event.preventDefault();
+
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        if(isLoggedIn) {
+            window.location.href = "마이페이지.html";
+        } else {
+            alert("로그인이 필요합니다.");
+            window.location.href = "디테일.html";
+        }
+    });
 </script>
 </html>

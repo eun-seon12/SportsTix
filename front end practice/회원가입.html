@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4.SportsTix.j</title>
+    <title>회원가입</title>
     <style>
     * {
             margin: 0;
@@ -21,8 +21,6 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            /* justify-content: space-between; */
-            /* align-items: center; */
         }
         header {
             display: flex;
@@ -39,18 +37,78 @@
             font-weight: bold;
             
         }
+        h2{
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
         #join {
-            width: 40%;
-            height: 100%;
-            background: white;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+          padding: 20px;
+          background: #4796eb;
+          color: white;
+          border-radius: 25px;
+          width: 50%;
+          height: 100%;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
         .join-info {
             list-style-type: none;
         }
+        #joinok {
+          background: #5D5D5D;
+          color: white;
+          border: none;
+          display: block;
+          margin: 0 auto;
+          padding: 10px;
+        }
+        .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* 모달 내용 */
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    input {
+      display: block;
+      margin-top: 10px;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    #lgbtn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
         </style>
 </head>
 <body>
@@ -62,11 +120,11 @@
             <div id="join">
                 <h2>회원가입</h2>
                 <ul class="join-info">
-                    <li>아이디</li><input type="text" id="id">
-                    <li>비밀번호</li><input type="text" id="password">
-                    <li>이름</li><input type="text" id="name">
-                    <li>전화번호</li><input type="number" id="phone">
-                    <li>이메일</li><input type="email" id="email">
+                    <li>아이디 <input type="text" id="id" placeholder="아이디"></li>
+                    <li>비밀번호 <input type="text" id="password" placeholder="비밀번호"></li>
+                    <li>이름 <input type="text" id="name" placeholder="홍길동"></li>
+                    <li>전화번호 <input type="number" id="phone" placeholder="010-1234-5678"></li>
+                    <li>이메일 <input type="email" id="email" placeholder="hgd1234@gmail.com"></li>
                     <br>
                     <button id="joinok">가입</button>
                 </ul>
@@ -77,9 +135,11 @@
         document.getElementById("sp").addEventListener("click", function() {
             window.location.href = "메인.html";
         });
-        document.getElementById("joinok").addEventListener("click",function(){
-            window.location.href ="로그인.html";
+        
+    document.getElementById("joinok").addEventListener("click",function(){
+            window.location.href ="메인.html";
         })
+
 </script>
 </body>
 </html>
