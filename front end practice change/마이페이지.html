@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3.SportsTix.l</title>
+    <title>마이페이지</title>
     <style>
-    * {
+        * {
             margin: 0;
             padding: 0;
         }
         body {
-            background: #A3DCFF;
+            background: #e3f4ff;
             padding: 0;
             margin: 0;
         }
@@ -39,38 +39,38 @@
             font-weight: bold;
             
         }
-        #login {
-            width: 40%;
-            height: 200%;
-            background: white;
-            margin: 0 auto;
+        #nav {
             display: flex;
-            flex-direction: column;
-           align-items: center;
+            list-style-type: none;
+            margin-top: 0;
+            padding-top:0;
+            
         }
-        </style>
+        #mpg {
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: black;
+        }
+        
+    </style>
 </head>
 <body>
     <div class="st">
         <header>
             <p id="sp">SportsTix</p>
+            <ul id="nav">
+                <li><a href="마이페이지.html" id="mpg">마이페이지</a></li>
+            </ul>
         </header>
         <section>
-            <div id="login">
-                <input type="text" id="id" placeholder="아이디"><br>
-                <input type="text" id="password" placeholder="비밀번호"><br>
-                <button id="logbt">확인</button>
-                <a href="회원가입.html" class="join">회원가입</a>
-            </div>
+            <p>마이페이지임</p>
         </section>
-    </div>
-    <script>
-        document.getElementById("sp").addEventListener("click", function() {
+        <script>
+            document.getElementById("sp").addEventListener("click", function() {
             window.location.href = "메인.html";
         });
-        document.getElementById("logbt").addEventListener("click",function(){
-            window.location.href ="디테일.html";
-        })
-</script>
+        </script>
 </body>
 </html>

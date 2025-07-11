@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세페이지</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #e3f4ff;
+            padding: 0;
+            margin: 0;
+        }
+        .st {
+            width: 100vh;
+            height: 100vh;
+            margin: 0 auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 200px;
+            padding: 0;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        #sp {
+            cursor: pointer;
+            font-size: 3.5rem;
+            font-weight: bold;
+            
+        }
+        #nav {
+            display: flex;
+            list-style-type: none;
+            margin-top: 0;
+            padding-top:0;
+            
+        }
+        #mpg {
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: black;
+            cursor: pointer;
+        }
+        .content {
+            /* height: 75%; */
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .left {
+            width: 50%;
+        }
+        a {
+            text-decoration: none;
+            color :black;
+            /* margin-bottom: 10%; */
+        }
+        img {
+            width: 400px;
+            height: 300px;
+            display: flex;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        .price {
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        .price h2 {
+            margin-bottom: 50px;
+        }
+        .price p {
+            margin: 5px 0;
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 8px;
+        }
+        .vip {
+            background-color: red ;
+        }
+        .normal {
+            background-color: yellow;
+        }
+        .right {
+            width: 45%;
+        }
+        .right h1 {
+            margin: 15% 0 15% 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .detial-info {
+            margin: 0 0 0 0 ;
+            font-size: 1rem;
+            line-height: 180%;
+        }
+        #btn2 {
+            margin-top: 50px;
+            width: 70%;
+            padding: 15px;
+            background-color: #5D5D5D ;
+            color: white;
+            border: none;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="st">
+
+
+        <header>
+            <p id="sp">SportsTix</p>
+            <ul id="nav">
+                <li id="mpg"><a href="#">마이페이지</a></li>
+            </ul>
+        </header>
+
+
+
+        <section>
+            <div class="content">
+                <div class="left">
+                <a href="메인.html" class="back">← 뒤로가기</a>
+                <div class="detail-img"></div>
+                    <img src="/front end practice change/baseball.jpg" alt="야구">
+                </div>
+
+                <div class="right">
+                    <h1>Seoul vs Busan Baseball Game</h1>
+                    <div class="detial-info">
+                    <P>
+                        날짜 : 2025년 7월 14일<br>
+                        시간 : 오후 6시 30분<br>
+                        장소 : 잠실 경기장 
+                    </P>
+                    </div>
+                    <button id="btn2">예매하기</button>
+                </div>
+            </div>
+            <hr>
+            <div class="price">
+                    <h2>가격</h2>
+                    <p><span class="dot vip"></span> vip석 20,000원</p>
+                    <p><span class="dot normal"></span> 일반석 10,000원</p>
+                </div>
+                <div class="notice">
+                    <h2>예매 및 관람안내</h2>
+                    <br>
+                    <br>
+                    <h4><예매 안내></h4>
+                    <br>
+                    <p>
+                        1. 예매 가능시간 : 경기당일 경기시작 1시간 후까지
+                        <br>
+                        2. 예매티켓 취소 가능시간 : 경기당일 경기시간 4시간 전까지
+                                *부분취소는 불가합니다. 기존 예매 건을 전체취소 후 재예매를 진행해야 하며, 취소 후 기존 좌석에 대한 선점은 보장되지 않습니다.
+                        <br>
+                        3. 현장 매표소 운영시간 : 평일 경기 시작 1시간 30분 전 / 주말,공휴일 경기 시작 2시간 전 시작 (변경 시 별도 공지)
+                        <br>
+                        4. 예매정책 
+                                *매수제한 : 1회 4매 
+                                *예매수수료 : 장당 1,000원 
+                                *문화누리카드의 부정이용 적발시 처벌의 대상이 될 수 있습니다.
+                                *무통장입금은 예매 당일 자정까지 입금하지 않으면 자동 취소됩니다.
+                                *무통장입금은 경기일 기준 2일 전까지 사용 가능합니다.
+                                *익사이팅존 안내
+                                익사이팅존은 안전상 문제로 초등학생까지는 관람 불가합니다. (보호자 동반시에도 입장불가)
+                                *군인 할인은 휴가증을 기준으로 할인 적용 됩니다.
+                                간부(부사관/장교/ 후보생 포함)의 경우 할인 적용이 불가합니다.
+                                *휠체어 장애인석은 복지증을 기준으로 구매 가능합니다. 
+                                단순 부상에 의한 휠체어 사용 고객은 휠체어 장애인석 구매가 불가합니다.  
+ 
+                                *우천 취소 안내
+                                - 우천 취소 확정 시, 예매내역은 익일 전액환불 및 일괄취소 처리됩니다. (주말 경기 취소 시, 차주 월요일 취소 처리됨)
+                                - 우천 취소 확정 전, 예매자 판단에 의한 취소 건은 취소 수수료 환불이 불가합니다. (임의판단에 의한 선 취소 건은 취소 수수료 부과됨)
+                    </p>
+                    <br>
+                    <h4><관람 안내></h4>
+                    <br>
+                    <br>
+                    <p>엉</p>
+                </div>
+        </section>
+    </div>
+    <footer>
+    </footer>
+</body>
+
+<script>
+        document.getElementById("sp").addEventListener("click", function() {
+            window.location.href = "메인.html";
+        });
+        document.getElementById("mpg").addEventListener("click", function() {
+            window.location.href = "마이페이지.html";
+        });
+        document.getElementById("btn2").addEventListener("click", function() {
+            window.location.href = "예매.html";
+        });
+</script>
+</html>

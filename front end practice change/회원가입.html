@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+    * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #e3f4ff;
+            padding: 0;
+            margin: 0;
+        }
+        .st {
+            width: 100vh;
+            height: 100vh;
+            margin: 0 auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 200px;
+            padding: 0;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        #sp {
+            cursor: pointer;
+            font-size: 3.5rem;
+            font-weight: bold;
+            
+        }
+        h2{
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+        #join {
+          padding: 20px;
+          background: #4796eb;
+          color: white;
+          border-radius: 25px;
+          width: 50%;
+          height: 100%;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .join-info {
+            list-style-type: none;
+        }
+        #joinok {
+          background: #5D5D5D;
+          color: white;
+          border: none;
+          display: block;
+          margin: 0 auto;
+          padding: 10px;
+        }
+        
+        </style>
+</head>
+<body>
+    <div class="st">
+        <header>
+            <p id="sp">SportsTix</p>
+        </header>
+        <section>
+            <div id="join">
+                <h2>회원가입</h2>
+                <ul class="join-info">
+                    <li>아이디 <input type="text" id="id" placeholder="아이디"></li>
+                    <li>비밀번호 <input type="text" id="password" placeholder="비밀번호"></li>
+                    <li>이름 <input type="text" id="name" placeholder="홍길동"></li>
+                    <li>전화번호 <input type="number" id="phone" placeholder="010-1234-5678"></li>
+                    <li>이메일 <input type="email" id="email" placeholder="hgd1234@gmail.com"></li>
+                    <br>
+                    <button id="joinok">가입</button>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script>
+        document.getElementById("sp").addEventListener("click", function() {
+            window.location.href = "메인.html";
+        });
+        
+    document.getElementById("joinok").addEventListener("click",function(){
+            window.location.href ="로그인.html";
+        })
+
+</script>
+</body>
+</html>

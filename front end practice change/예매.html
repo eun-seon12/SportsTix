@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좌석선택</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #e3f4ff;
+            padding: 0;
+            margin: 0;
+        }
+        .st {
+            width: 100vh;
+            height: 100vh;
+            margin: 0 auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 200px;
+            padding: 0;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        #sp {
+            cursor: pointer;
+            font-size: 3.5rem;
+            font-weight: bold;
+            
+        }
+        .booking {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            
+        }
+        .left {
+            width: 70%;
+        }
+        a {
+            text-decoration: none;
+            color :black;
+            /* margin-bottom: 10%; */
+        }
+        .seats-area {
+        background: black;
+        padding: 20px 0 20px;
+        margin-top: 10px;
+        }
+
+        .seats-area h2 {
+            color: white;
+        text-align: center;
+        margin: 10px 0 20px;
+        }
+
+        .seats {
+        display: grid;
+        grid-template-columns: repeat(10, 30px);
+        gap: 10px;
+        justify-content: center;
+        }
+
+        .seat {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #999;
+        }
+        .vip.selected {
+            background-color: #999;
+        }
+        .normal.selected {
+            background-color: #999;
+        }
+        .right {
+            width: 30%;
+        }
+        .price p {
+            margin: 5px 0;
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 8px;
+        }
+        .vip {
+            background-color: red;
+            border: none;
+        }
+        .normal {
+            background-color: yellow;
+            border: none;
+        }
+        #selectedInfo {
+            margin-top: 50px;
+            font-size: large;
+        }
+        #totalPrice {
+            margin-top: 20px;
+            font-size: large;
+        }
+        .paybtn {
+            margin-top: 100px;
+            width: 80%;
+            padding: 30px;
+            background-color: #5D5D5D ;
+            color: white;
+            border: none;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="st">
+
+        <header>
+            <p id="sp">SportsTix</p>
+        </header>
+
+        <section>
+            <div class="booking">
+                <div class="left">
+                   <a href="디테일.html" class="back">← 뒤로가기</a>
+
+                <h2>좌석 선택</h2>
+
+
+                <div class="seats-area">
+                <h2>S1 구역</h2>
+                <div class="seats">
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+                    <div class="seat vip"></div>
+
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                    <div class="seat normal"></div>
+                </div>
+                </div>
+                </div>
+                <div class="right">
+                    <div class="price">
+                    <h2>가격</h2>
+                    <p><span class="dot vip"></span> vip석 20,000원</p>
+                    <p><span class="dot normal"></span> 일반석 10,000원</p>
+                    </div>
+                    <div id="selectedInfo">
+                        <strong>선택된 좌석:</strong>없음
+                    </div>
+                    <div id="totalPrice">
+                        <strong>총 가격:</strong>0원
+                    </div>
+                    <button onclick="openPaymentPopup()">결제하기</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+    </footer>
+
+<script>
+    document.getElementById("sp").addEventListener("click", function() {
+            window.location.href = "메인.html";
+        });
+  const selectedInfo = document.getElementById('selectedInfo');
+  const totalPrice1 = document.getElementById('totalPrice');
+  const seats = document.querySelectorAll('.seat');
+  const selectedSeats = new Set();
+
+  seats.forEach((seat, index) => {
+    if (!seat.dataset.number) seat.dataset.number = index + 1;
+    if (!seat.dataset.type) seat.dataset.type = seat.classList.contains('vip') ? 'vip' : 'normal';
+
+    const seatNumber = seat.dataset.number;
+    const seatType = seat.dataset.type;
+    const seatId = `${seatType.toUpperCase()} ${seatNumber}`;
+
+    seat.addEventListener('click', () => {
+      if (seat.classList.contains('selected')) {
+        seat.classList.remove('selected');
+        selectedSeats.delete(seatId);
+      } else {
+        seat.classList.add('selected');
+        selectedSeats.add(seatId);
+      }
+      updateSelectedInfo();
+      updateTotalPrice();
+    });
+  });
+
+  function updateSelectedInfo() {
+    if (selectedSeats.size === 0) {
+      selectedInfo.innerHTML = `<strong>선택된 좌석:</strong><br>없음`;
+    } else {
+      selectedInfo.innerHTML = `<strong>선택된 좌석:</strong><br>${[...selectedSeats].join(', ')}`;
+    }
+  }
+  function updateTotalPrice() {
+    let total = 0;
+    document.querySelectorAll('.seat.selected').forEach(seat => {
+      const type = seat.dataset.type;
+      total += type === 'vip' ? 20000 : 10000;
+    });
+    totalPrice1.innerHTML = `<strong>총 가격:</strong> ${total.toLocaleString()}원`;
+  }
+    function openPaymentPopup(){
+        window.open("결제.html", "결제창", "width=500, height=600, left=200, top=100");
+    }
+</script>
+
+
+</body>
+</html>
