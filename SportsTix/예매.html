@@ -288,24 +288,32 @@
     const selectedInfo = document.getElementById('selectedInfo');
     const totalPrice1 = document.getElementById('totalPrice');
     const seats = document.querySelectorAll('.seat');
-    const selectedSeats = new Set();
+    const selectedSeats = new Set(); //Set 객체로 중복 없게 좌석 정보를 넣어둠
 
     seats.forEach((seat, index) => {
+        //.seat클래스를 가진 요소들을 반복
         if (!seat.dataset.number) seat.dataset.number = index + 1;
         if (!seat.dataset.type) seat.dataset.type = seat.classList.contains('vip') ? 'vip' : 'normal';
+        //데이터타입속성이없을때자동으로 좌석번호부여 1부터!! vip 클래스 있으면 vip 아니면 normal
 
     const seatNumber = seat.dataset.number;
+    //위에서자동으로부여해줬으니까 요소에 속성이 있는 상태, 시트넘버에 변수 저장
     const seatType = seat.dataset.type;
+    //시트타입 변수에 속성값을 저장
     const seatId = `${seatType.toUpperCase()} ${seatNumber}`;
+    //타입(대문자)좌석넘버 -> 예) VIP3
 
     seat.addEventListener('click', () => {
       if (seat.classList.contains('selected')) {
+        //선택되어있을때클릭시해제됨
         seat.classList.remove('selected');
         selectedSeats.delete(seatId);
       } else {
+        //선택x->클릭시선택됨
         seat.classList.add('selected');
         selectedSeats.add(seatId);
       }
+      //업데이트해서표시
       updateSelectedInfo();
       updateTotalPrice();
         });
@@ -315,16 +323,17 @@
         if (selectedSeats.size === 0) {
             selectedInfo.innerHTML = `<strong>선택된 좌석:</strong><br>없음`;
         } else {
-            selectedInfo.innerHTML = `<strong>선택된 좌석:</strong><br>${[...selectedSeats].join(', ')}`;
+            selectedInfo.innerHTML = `<strong>선택된 좌석:</strong><br>${[...selectedSeats].join(', ')}`; 
+            //한개 이상이면 스프레드 문법 사용 -> Set을 배열로 변환해서 변수를 넣어줌
         }
     }
     function updateTotalPrice() {
     let total = 0;
     document.querySelectorAll('.seat.selected').forEach(seat => {
       const type = seat.dataset.type;
-      total += type === 'vip' ? 20000 : 10000;
+      total += type === 'vip' ? 20000 : 10000; //vip는 2 나머지는 1로 계산
     });
-    totalPrice1.innerHTML = `<strong>총 가격:</strong> ${total.toLocaleString()}원`;
+    totalPrice1.innerHTML = `<strong>총 가격:</strong> ${total.toLocaleString()}원`; //,000원으로 표시해줌
     }
     function openPaymentPopup(){
         window.open("결제.html", "결제창", "width=500, height=600, left=200, top=100");
